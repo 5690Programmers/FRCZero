@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.team5690.frc.frczero">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,12 +16,13 @@
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DeviceListActivity" />
         <activity android:name=".Scouting" />
-        <activity android:name=".pit_scouting"></activity>
+        <activity android:name=".pit_scouting" />
+        <activity android:name=".main" />
     </application>
 
 </manifest>

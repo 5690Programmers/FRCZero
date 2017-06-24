@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+
 public class Home extends AppCompatActivity {
 
     @Override
@@ -18,6 +19,10 @@ public class Home extends AppCompatActivity {
     }
     public void gotoPitScouting(View view){
         Intent intent = new Intent(this, pit_scouting.class);
+        startActivity(intent);
+    }
+    public void gotoBluetooth (View view){
+        Intent intent = new Intent(this, DeviceListActivity.class);
         startActivity(intent);
     }
 }

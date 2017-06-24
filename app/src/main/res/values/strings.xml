@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FRC:Zero</string>
+    <string name="match_scout">Match Scouting</string>
+    <string name="pit_scout">Pit Scouting</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!--/* Pit Scouting Strings */-->
+
+    <string name="tank">Tank</string>
+    <string name="swerve">Swerve</string>
+    <string name="holonomic">Holonomic</string>
+    <string name="mecanum">Mecanum</string>
+
+    <string name="yesclimb">Yes</string>
+    <string name="noclimb">No</string>
+
+
+
+
+
+</resources>

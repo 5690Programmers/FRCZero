@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                app:cardCornerRadius="0dp">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/root"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tGears"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/controls"
+                        android:text="Gears" />
+
+                    <LinearLayout
+                        android:id="@+id/controls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <Button
+                            android:id="@+id/mGears"
+                            android:onClick="onClick"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="-"
+                            android:textColor="?attr/colorAccent"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/vGears"
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <Button
+                            android:id="@+id/pGears"
+                            android:onClick="onClick"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="+"
+                            android:textColor="?attr/colorAccent"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                app:cardCornerRadius="0dp">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/root2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tFuel"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/controls2"
+                        android:text="Fuel" />
+
+                    <LinearLayout
+                        android:id="@+id/controls2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <Button
+                            android:id="@+id/mFuel"
+                            android:onClick="onClick"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="-"
+                            android:textColor="?attr/colorAccent"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/vFuel"
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <Button
+                            android:id="@+id/pFuel"
+                            android:onClick="onClick"
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:text="+"
+                            android:textColor="?attr/colorAccent"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                app:cardCornerRadius="0dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/root"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/valuesGroup"
+                        android:text="Auto" />
+
+                    <RadioGroup
+                        android:id="@+id/valuesGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/name"
+                        android:minHeight="48dp"
+                        android:minWidth="48dp">
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/no" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

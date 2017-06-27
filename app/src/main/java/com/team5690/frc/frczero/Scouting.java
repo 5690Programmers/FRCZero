@@ -20,7 +20,8 @@ public class Scouting extends AppCompatActivity {
 
 
     Button Save;
-
+    private RadioGroup AutoYN;
+    private RadioButton AutoButton;
     private String filename = "SampleFile.txt";
     private String filepath = "MyFileStorage";
     File myExternalFile;
@@ -88,10 +89,23 @@ public class Scouting extends AppCompatActivity {
         Save.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                    AutoYN = (RadioGroup) findViewById(R.id.valuesGroup);
+                    Save = (Button) findViewById(R.id.Save);
+
+                    // get selected radio button from radioGroup
+                    int selectedId = AutoYN.getCheckedRadioButtonId();
+
+                    // find the radiobutton by returned id
+                    AutoButton = (RadioButton) findViewById(selectedId);
+
+
+
                 try {
                     FileOutputStream fos = new FileOutputStream(myExternalFile);
                     fos.write(vGears.getText().toString().getBytes());
                     fos.write(vFuel.getText().toString().getBytes());
+                    fos.write(AutoButton.getText().toString().getBytes());
                     fos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -126,31 +140,7 @@ public class Scouting extends AppCompatActivity {
         }
         return false;
     }
-
-
-    private RadioGroup AutoYN;
-    private RadioButton AutoButton;
-    private Button button;
-
-
-
-    public void button(View v) {
-        AutoYN = (RadioGroup) findViewById(R.id.valuesGroup);
-        button = (Button) findViewById(R.id.Save);
-
-        // get selected radio button from radioGroup
-        int selectedId = AutoYN.getCheckedRadioButtonId();
-
-        // find the radiobutton by returned id
-        AutoButton = (RadioButton) findViewById(selectedId);
-
-        Toast.makeText(Scouting.this, AutoButton.getText(), Toast.LENGTH_SHORT).show();
-
-            }
-
-        }
-
-
+}
 
 
 

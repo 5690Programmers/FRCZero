@@ -19,10 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeviceListActivity" />
         <activity android:name=".Scouting" />
         <activity android:name=".pit_scouting" />
-        <activity android:name=".main" />
     </application>
 
 </manifest>

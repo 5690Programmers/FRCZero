@@ -21,8 +21,5 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(this, pit_scouting.class);
         startActivity(intent);
     }
-    public void gotoBluetooth (View view){
-        Intent intent = new Intent(this, DeviceListActivity.class);
-        startActivity(intent);
-    }
+
 }

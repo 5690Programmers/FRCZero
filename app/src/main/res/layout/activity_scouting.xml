@@ -207,6 +207,23 @@
 
 
 
+
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:onClick="Save"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:onClick="button"
+        android:text="Button" />
 </LinearLayout>

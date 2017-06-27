@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -14,30 +13,24 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 
 
 public class Scouting extends AppCompatActivity {
-
-
     Button Save;
     private RadioGroup AutoYN;
     private RadioButton AutoButton;
-   /* private RadioGroup Climbing;
-    private RadioButton ClimbYBN;
-    private RadioGroup PlayStyle;
-    private RadioButton OBD;*/
+    private RadioGroup PlayGroup;
+    private RadioButton PlayButton;
+    private RadioGroup ClimbGroup;
+    private RadioButton ClimbButton;
 
-
-    private String filename = "SampleFile.txt";
-    private String filepath = "MyFileStorage";
+    private String filename = "MatchScouting.txt";
+    private String filepath = "ScoutingData";
     File myExternalFile;
-
 
     Button pGears, mGears, pFuel, mFuel;
     TextView tGears, vGears, vFuel, tFuel;
-    EditText vTeamNumber, vMatchNumber;
     int GearCounter;
     int FuelCounter;
 
@@ -90,52 +83,45 @@ public class Scouting extends AppCompatActivity {
         });
 
 
-        vGears = (TextView) findViewById(R.id.vGears);
-        vFuel = (TextView) findViewById(R.id.vFuel);
-
-
         Save = (Button) findViewById(R.id.Save);
         Save.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                   /* Climbing = (RadioGroup) findViewById(R.id.Climbing);
-                    PlayStyle = (RadioGroup) findViewById(R.id.PlayStyle);*/
-                    AutoYN = (RadioGroup) findViewById(R.id.valuesGroup);
+                    PlayGroup = (RadioGroup) findViewById(R.id.PlayGroup);
+                    AutoYN = (RadioGroup) findViewById(R.id.AutoGroup);
+                    ClimbGroup = (RadioGroup) findViewById(R.id.ClimbGroup);
                     Save = (Button) findViewById(R.id.Save);
 
                     // get selected radio button from radioGroup
                     int selectedId = AutoYN.getCheckedRadioButtonId();
-                /*    int selectedId2 = PlayStyle.getCheckedRadioButtonId();
-                    int selectedId3 = Climbing.getCheckedRadioButtonId();
-*/
+                    int selectedId2 = PlayGroup.getCheckedRadioButtonId();
+                    int selectedId3 = ClimbGroup.getCheckedRadioButtonId();
+
                     // find the radiobutton by returned id
                     AutoButton = (RadioButton) findViewById(selectedId);
-                /*    OBD = (RadioButton) findViewById(selectedId2);
-                    ClimbYBN = (RadioButton) findViewById(selectedId3);*/
-
-
-
-                OutputStreamWriter osw;
+                    PlayButton = (RadioButton) findViewById(selectedId2);
+                    ClimbButton = (RadioButton) findViewById(selectedId3);
 
                 try {
-                    FileOutputStream fos = new FileOutputStream(myExternalFile);
-                   /* fos.write(vTeamNumber.getEditableText().toString().getBytes()); THIS CAUSES APP TO CRASH
-                    fos.write(vMatchNumber.getEditableText().toString().getBytes());*/
+                    FileOutputStream fos = new FileOutputStream(myExternalFile, true);
+                    OutputStreamWriter osw = new OutputStreamWriter(fos);
                     fos.write(vGears.getText().toString().getBytes());
                     fos.write(vFuel.getText().toString().getBytes());
                     fos.write(AutoButton.getText().toString().getBytes());
-                    osw = new OutputStreamWriter(fos); /*TEST THIS, IT SAVES BUT DOES IT WORK*/
-                    osw.append("\r\n");
-
-                /*    fos.write(OBD.getText().toString().getBytes());
-                    fos.write(ClimbYBN.getText().toString().getBytes());*/
+                    fos.write(ClimbButton.getText().toString().getBytes());
+                    fos.write(PlayButton.getText().toString().getBytes());
+                    String separator = System.getProperty("line.separator");
+                    osw.append("");
+                    osw.append(separator);
+                    osw.flush();
+                    osw.close();
                     fos.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(Scouting.this, ("File saved to External Storage..."),
+                Toast.makeText(Scouting.this, ("File Saved..."),
                         Toast.LENGTH_LONG).show();
 
             }

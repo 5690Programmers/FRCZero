@@ -86,7 +86,7 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/primary"
+                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 app:cardCornerRadius="0dp">
@@ -151,7 +151,7 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/primary"
+                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 app:cardCornerRadius="0dp">
@@ -216,14 +216,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.06"
+        android:background="@color/black"
         android:onClick="Save"
         android:text="Save" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.06"
-        android:onClick="button"
-        android:text="Button" />
 </LinearLayout>

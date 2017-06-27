@@ -1,10 +1,12 @@
 package com.team5690.frc.frczero;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -12,8 +14,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
 
 public class Scouting extends AppCompatActivity {
@@ -22,6 +24,12 @@ public class Scouting extends AppCompatActivity {
     Button Save;
     private RadioGroup AutoYN;
     private RadioButton AutoButton;
+   /* private RadioGroup Climbing;
+    private RadioButton ClimbYBN;
+    private RadioGroup PlayStyle;
+    private RadioButton OBD;*/
+
+
     private String filename = "SampleFile.txt";
     private String filepath = "MyFileStorage";
     File myExternalFile;
@@ -29,6 +37,7 @@ public class Scouting extends AppCompatActivity {
 
     Button pGears, mGears, pFuel, mFuel;
     TextView tGears, vGears, vFuel, tFuel;
+    EditText vTeamNumber, vMatchNumber;
     int GearCounter;
     int FuelCounter;
 
@@ -90,22 +99,38 @@ public class Scouting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+                   /* Climbing = (RadioGroup) findViewById(R.id.Climbing);
+                    PlayStyle = (RadioGroup) findViewById(R.id.PlayStyle);*/
                     AutoYN = (RadioGroup) findViewById(R.id.valuesGroup);
                     Save = (Button) findViewById(R.id.Save);
 
                     // get selected radio button from radioGroup
                     int selectedId = AutoYN.getCheckedRadioButtonId();
-
+                /*    int selectedId2 = PlayStyle.getCheckedRadioButtonId();
+                    int selectedId3 = Climbing.getCheckedRadioButtonId();
+*/
                     // find the radiobutton by returned id
                     AutoButton = (RadioButton) findViewById(selectedId);
+                /*    OBD = (RadioButton) findViewById(selectedId2);
+                    ClimbYBN = (RadioButton) findViewById(selectedId3);*/
 
 
+
+                OutputStreamWriter osw;
 
                 try {
                     FileOutputStream fos = new FileOutputStream(myExternalFile);
+                   /* fos.write(vTeamNumber.getEditableText().toString().getBytes()); THIS CAUSES APP TO CRASH
+                    fos.write(vMatchNumber.getEditableText().toString().getBytes());*/
                     fos.write(vGears.getText().toString().getBytes());
                     fos.write(vFuel.getText().toString().getBytes());
                     fos.write(AutoButton.getText().toString().getBytes());
+                    osw = new OutputStreamWriter(fos); /*TEST THIS, IT SAVES BUT DOES IT WORK*/
+                    osw.append("\r\n");
+
+                /*    fos.write(OBD.getText().toString().getBytes());
+                    fos.write(ClimbYBN.getText().toString().getBytes());*/
                     fos.close();
                 } catch (IOException e) {
                     e.printStackTrace();

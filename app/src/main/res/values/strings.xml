@@ -12,8 +12,17 @@
     <string name="holonomic">Holonomic</string>
     <string name="mecanum">Mecanum</string>
 
-    <string name="yesclimb">Yes</string>
-    <string name="noclimb">No</string>
+    <string name="yesclimb">Climb</string>
+    <string name="attemptclimb">Attempted Climb</string>
+    <string name="noclimb">No Climb</string>
+
+    <string name="offense">Defense</string>
+    <string name="defense">Offense</string>
+    <string name="playboth">Both</string>
+
+
+
+
 
 
       <!--  BluetoothChat -->

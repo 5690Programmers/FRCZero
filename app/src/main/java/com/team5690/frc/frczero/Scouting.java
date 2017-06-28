@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class Scouting extends AppCompatActivity {
 
     Button pGears, mGears, pFuel, mFuel;
     TextView tGears, vGears, vFuel, tFuel;
+    EditText vTeamNumber, vMatchNumber;
     int GearCounter;
     int FuelCounter;
 
@@ -39,6 +41,8 @@ public class Scouting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting);
         GearCounter = 0;
+        vTeamNumber = (EditText) findViewById(R.id.vTeamNumber);
+        vMatchNumber = (EditText) findViewById(R.id.vMatchNumber);
         pGears = (Button) findViewById(R.id.pGears);
         mGears = (Button) findViewById(R.id.mGears);
         vGears = (TextView) findViewById(R.id.vGears);
@@ -107,12 +111,16 @@ public class Scouting extends AppCompatActivity {
                 try {
                     FileOutputStream fos = new FileOutputStream(myExternalFile, true);
                     OutputStreamWriter osw = new OutputStreamWriter(fos);
-                    fos.write(vGears.getText().toString().getBytes());
-                    fos.write(vFuel.getText().toString().getBytes());
-                    fos.write(AutoButton.getText().toString().getBytes());
-                    fos.write(ClimbButton.getText().toString().getBytes());
-                    fos.write(PlayButton.getText().toString().getBytes());
                     String separator = System.getProperty("line.separator");
+
+                    /* User input */
+                    fos.write((vMatchNumber.getText().toString() + ",").getBytes());
+                    fos.write((vTeamNumber.getText().toString() + ",").getBytes());
+                    fos.write((vGears.getText().toString() + ",").getBytes());
+                    fos.write((vFuel.getText().toString() + ",").getBytes());
+                    fos.write((AutoButton.getText().toString() + ",").getBytes());
+                    fos.write((ClimbButton.getText().toString() + ",").getBytes());
+                    fos.write(PlayButton.getText().toString().getBytes());
                     osw.append("");
                     osw.append(separator);
                     osw.flush();

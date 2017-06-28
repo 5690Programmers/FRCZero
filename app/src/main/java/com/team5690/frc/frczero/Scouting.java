@@ -1,6 +1,5 @@
 package com.team5690.frc.frczero;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +17,9 @@ import java.io.OutputStreamWriter;
 
 
 public class Scouting extends AppCompatActivity {
-    Button Save;
+    Button SaveMatch;
     private RadioGroup AutoYN;
     private RadioButton AutoButton;
-    private RadioGroup PlayGroup;
-    private RadioButton PlayButton;
     private RadioGroup ClimbGroup;
     private RadioButton ClimbButton;
 
@@ -32,7 +29,7 @@ public class Scouting extends AppCompatActivity {
 
     Button pGears, mGears, pFuel, mFuel;
     TextView tGears, vGears, vFuel, tFuel;
-    EditText vTeamNumber, vMatchNumber;
+    EditText vTeamNumber, vMatchNumber, vComments;
     int GearCounter;
     int FuelCounter;
 
@@ -40,7 +37,10 @@ public class Scouting extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting);
+
+
         GearCounter = 0;
+        vComments = (EditText) findViewById(R.id.vComments);
         vTeamNumber = (EditText) findViewById(R.id.vTeamNumber);
         vMatchNumber = (EditText) findViewById(R.id.vMatchNumber);
         pGears = (Button) findViewById(R.id.pGears);
@@ -87,26 +87,22 @@ public class Scouting extends AppCompatActivity {
         });
 
 
-        Save = (Button) findViewById(R.id.Save);
-        Save.setOnClickListener(new OnClickListener() {
+        SaveMatch = (Button) findViewById(R.id.Save);
+        SaveMatch.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                    PlayGroup = (RadioGroup) findViewById(R.id.PlayGroup);
                     AutoYN = (RadioGroup) findViewById(R.id.AutoGroup);
                     ClimbGroup = (RadioGroup) findViewById(R.id.ClimbGroup);
-                    Save = (Button) findViewById(R.id.Save);
+                    SaveMatch = (Button) findViewById(R.id.Save);
 
                     // get selected radio button from radioGroup
                     int selectedId = AutoYN.getCheckedRadioButtonId();
-                    int selectedId2 = PlayGroup.getCheckedRadioButtonId();
-                    int selectedId3 = ClimbGroup.getCheckedRadioButtonId();
+                    int selectedId2 = ClimbGroup.getCheckedRadioButtonId();
 
                     // find the radiobutton by returned id
                     AutoButton = (RadioButton) findViewById(selectedId);
-                    PlayButton = (RadioButton) findViewById(selectedId2);
-                    ClimbButton = (RadioButton) findViewById(selectedId3);
+                    ClimbButton = (RadioButton) findViewById(selectedId2);
 
                 try {
                     FileOutputStream fos = new FileOutputStream(myExternalFile, true);
@@ -120,7 +116,7 @@ public class Scouting extends AppCompatActivity {
                     fos.write((vFuel.getText().toString() + ",").getBytes());
                     fos.write((AutoButton.getText().toString() + ",").getBytes());
                     fos.write((ClimbButton.getText().toString() + ",").getBytes());
-                    fos.write(PlayButton.getText().toString().getBytes());
+                    fos.write(vComments.getText().toString().getBytes());
                     osw.append("");
                     osw.append(separator);
                     osw.flush();
@@ -136,7 +132,7 @@ public class Scouting extends AppCompatActivity {
         });
 
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
-            Save.setEnabled(false);
+            SaveMatch.setEnabled(false);
         } else {
             myExternalFile = new File(getExternalFilesDir(filepath), filename);
         }

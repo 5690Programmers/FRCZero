@@ -17,11 +17,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/primary"
+                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardCornerRadius="0dp">
+
+
+
+                <EditText
+                    android:id="@+id/vPitTeamNumber"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/controls"
+                    android:textColorHint="@color/primary"
+                    android:hint="Team Number" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/black"
                 app:cardCornerRadius="0dp">
 
 
@@ -41,12 +67,12 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/valuesGroup"
+                        android:layout_toLeftOf="@+id/DriveGroup"
                         android:text="Drive Train" />
 
 
                     <RadioGroup
-                        android:id="@+id/drivetrainGroup"
+                        android:id="@+id/DriveGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -59,7 +85,7 @@
                             android:id="@+id/holonomic"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="false"
+                            android:checked="true"
                             android:text="@string/holonomic" />
 
                         <RadioButton
@@ -80,8 +106,140 @@
                             android:id="@+id/swerve"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="true"
+                            android:checked="false"
                             android:text="@string/swerve" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/root6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/GearPlacement"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/GearGroup"
+                        android:text="Gear Placement" />
+
+
+                    <RadioGroup
+                        android:id="@+id/GearGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/GearPlacement"
+                        android:minHeight="96dp"
+                        android:minWidth="96dp">
+
+                        <RadioButton
+                            android:id="@+id/Passive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/passive" />
+
+                        <RadioButton
+                            android:id="@+id/Active"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/active" />
+
+                        <RadioButton
+                            android:id="@+id/NoGearPlace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/nogearplace" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/root7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/FuelShooter"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="false"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/FuelGroup"
+                        android:text="Fuel Shooter" />
+
+
+                    <RadioGroup
+                        android:id="@+id/FuelGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/FuelShooter"
+                        android:minHeight="96dp"
+                        android:minWidth="96dp">
+
+                        <RadioButton
+                            android:id="@+id/HighBoiler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/highshooter" />
+
+                        <RadioButton
+                            android:id="@+id/LowBoiler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/lowshooter" />
+
+                        <RadioButton
+                            android:id="@+id/NoShooter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/noshooter" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -90,21 +248,21 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/primary"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/black"
                 app:cardCornerRadius="0dp">
 
 
                 <RelativeLayout
-                    android:id="@+id/root"
+                    android:id="@+id/root8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/climbergroup"
+                        android:id="@+id/ClimbGroup"
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -112,25 +270,25 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/valuesGroup"
+                        android:layout_toLeftOf="@+id/ClimberGroup"
                         android:text="Climber" />
 
 
                     <RadioGroup
-                        android:id="@+id/climber"
+                        android:id="@+id/ClimberGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/climbergroup"
-                        android:minHeight="96dp"
-                        android:minWidth="96dp">
+                        android:layout_alignTop="@+id/ClimbGroup"
+                        android:minHeight="48dp"
+                        android:minWidth="48dp">
 
                         <RadioButton
                             android:id="@+id/yesclimb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="false"
+                            android:checked="true"
                             android:text="@string/yesclimb" />
 
                         <RadioButton
@@ -145,6 +303,43 @@
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/root9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/vPitComments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Comments"
+                        android:textColorHint="@color/primary"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/SavePit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.06"
+                android:background="@color/black"
+                android:onClick="SavePit"
+                android:text="Save" />
 
 
         </LinearLayout>

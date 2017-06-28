@@ -44,8 +44,8 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
                 app:cardCornerRadius="0dp">
 
 
@@ -68,12 +68,12 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
                 app:cardCornerRadius="0dp">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/root"
+                    android:id="@+id/root3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -135,7 +135,7 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
                 app:cardCornerRadius="0dp">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -205,12 +205,12 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
                 app:cardCornerRadius="0dp">
 
 
                 <RelativeLayout
-                    android:id="@+id/root"
+                    android:id="@+id/root4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -225,7 +225,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/valuesGroup"
+                        android:layout_toLeftOf="@+id/AutoGroup"
                         android:text="Auto" />
 
                     <RadioGroup
@@ -243,14 +243,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="false"
-                            android:text="@string/yes" />
+                            android:text="@string/autoyes" />
 
                         <RadioButton
                             android:id="@+id/no"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="@string/no" />
+                            android:text="@string/autono" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -264,12 +264,12 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
                 app:cardCornerRadius="0dp">
 
 
                 <RelativeLayout
-                    android:id="@+id/root"
+                    android:id="@+id/root5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -284,7 +284,7 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/valuesGroup"
+                        android:layout_toLeftOf="@+id/ClimbGroup"
                         android:text="Climb" />
 
                     <RadioGroup
@@ -306,7 +306,7 @@
 
 
                         <RadioButton
-                            android:id="@+id/attempclimb"
+                            android:id="@+id/attemptclimb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
@@ -331,7 +331,7 @@
                 android:layout_width="match_parent"
                 app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
                 app:cardCornerRadius="0dp">
 
 
@@ -342,50 +342,13 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:id="@+id/Play"
-                        style="@style/TextAppearance.AppCompat.Title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="false"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="false"
-                        android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/valuesGroup"
-                        android:text="Play Style" />
-
-                    <RadioGroup
-                        android:id="@+id/PlayGroup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/Play"
-                        android:minHeight="48dp"
-                        android:minWidth="48dp">
-
-                        <RadioButton
-                            android:id="@+id/offense"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="false"
-                            android:text="@string/offense" />
-
-
-                        <RadioButton
-                            android:id="@+id/both"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/playboth" />
-
-                        <RadioButton
-                            android:id="@+id/defense"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/defense" />
-                    </RadioGroup>
+                 <EditText
+                     android:id="@+id/vComments"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:hint="Comments"
+                     android:textColorHint="@color/primary"
+                     />
 
                 </RelativeLayout>
 
@@ -397,6 +360,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.06"
+                android:minHeight="67dp"
                 android:background="@color/black"
                 android:onClick="Save"
                 android:text="Save" />

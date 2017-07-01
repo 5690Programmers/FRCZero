@@ -23,7 +23,7 @@ public class Scouting extends AppCompatActivity {
     private RadioGroup ClimbGroup;
     private RadioButton ClimbButton;
 
-    private String filename = "MatchScouting.txt";
+    private String filename = "MatchScouting.csv";
     private String filepath = "ScoutingData";
     File myExternalFile;
 
@@ -92,17 +92,19 @@ public class Scouting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    AutoYN = (RadioGroup) findViewById(R.id.AutoGroup);
-                    ClimbGroup = (RadioGroup) findViewById(R.id.ClimbGroup);
-                    SaveMatch = (Button) findViewById(R.id.Save);
+                AutoYN = (RadioGroup) findViewById(R.id.AutoGroup);
+                ClimbGroup = (RadioGroup) findViewById(R.id.ClimbGroup);
+                SaveMatch = (Button) findViewById(R.id.Save);
 
-                    // get selected radio button from radioGroup
-                    int selectedId = AutoYN.getCheckedRadioButtonId();
-                    int selectedId2 = ClimbGroup.getCheckedRadioButtonId();
+                // get selected radio button from radioGroup
+                int selectedId = AutoYN.getCheckedRadioButtonId();
+                int selectedId2 = ClimbGroup.getCheckedRadioButtonId();
 
-                    // find the radiobutton by returned id
-                    AutoButton = (RadioButton) findViewById(selectedId);
-                    ClimbButton = (RadioButton) findViewById(selectedId2);
+                // find the radiobutton by returned id
+                AutoButton = (RadioButton) findViewById(selectedId);
+                ClimbButton = (RadioButton) findViewById(selectedId2);
+
+
 
                 try {
                     FileOutputStream fos = new FileOutputStream(myExternalFile, true);
@@ -134,11 +136,11 @@ public class Scouting extends AppCompatActivity {
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             SaveMatch.setEnabled(false);
         } else {
-            myExternalFile = new File(getExternalFilesDir(filepath), filename);
-        }
-
-
+            myExternalFile = new File(getExternalFilesDir(filepath), filename);        }
     }
+
+
+
 
     private static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();

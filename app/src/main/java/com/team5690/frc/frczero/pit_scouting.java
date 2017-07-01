@@ -31,7 +31,7 @@ public class pit_scouting extends AppCompatActivity {
 
     EditText vPitTeamNumber, vPitComments;
     Button SavePit;
-    private String filename = "PitScouting.txt";
+    private String filename = "PitScouting.csv";
     private String filepath = "PitScouting";
     File myFile;
 
@@ -90,7 +90,7 @@ public class pit_scouting extends AppCompatActivity {
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             SavePit.setEnabled(false);
         } else {
-            myFile = new File(getExternalFilesDir(filepath), filename);
+            myFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), filename);
         }
 
 

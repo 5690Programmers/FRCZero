@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:weightSum="1">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,34 +21,77 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
-
-
-                <EditText
-                    android:id="@+id/vPitTeamNumber"
-                    style="@style/TextAppearance.AppCompat.Title"
+                <RelativeLayout
+                    android:id="@+id/root3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/controls"
-                    android:textColorHint="@color/primary"
-                    android:hint="Team Number" />
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:padding="0dp">
 
+                    <EditText
+                        android:id="@+id/vPitTeamNumber"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/controls"
+                        android:hint="Team Number"
+                        android:textColorHint="@color/dark_background" />
+
+                    <LinearLayout
+                        android:id="@+id/backcontrol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/backbutton"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/backbutton2"
+                        android:backgroundTint="@color/primary"
+                        android:onClick="BackButton"
+                        android:padding="0dp"
+                        android:text=""
+                        android:textColor="@color/light_background"
+                        android:textSize="22sp" />
+
+
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
 
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -63,11 +107,9 @@
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/DriveGroup"
                         android:text="Drive Train" />
 
 
@@ -75,31 +117,17 @@
                         android:id="@+id/DriveGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/drivetrain"
                         android:minHeight="96dp"
-                        android:minWidth="96dp">
-
-                        <RadioButton
-                            android:id="@+id/holonomic"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/holonomic" />
-
-                        <RadioButton
-                            android:id="@+id/mecanum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checked="true"
-                            android:text="@string/mecanum" />
+                        android:minWidth="96dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
 
                         <RadioButton
                             android:id="@+id/tank"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="false"
+                            android:checked="true"
                             android:text="@string/tank" />
 
                         <RadioButton
@@ -108,6 +136,27 @@
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="@string/swerve" />
+
+                        <RadioButton
+                            android:id="@+id/slide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/slide" />
+
+                        <RadioButton
+                            android:id="@+id/mecanum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/mecanum" />
+
+                        <RadioButton
+                            android:id="@+id/holonomic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/holonomic" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -117,10 +166,19 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -136,11 +194,9 @@
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/GearGroup"
                         android:text="Gear Placement" />
 
 
@@ -148,11 +204,11 @@
                         android:id="@+id/GearGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/GearPlacement"
                         android:minHeight="96dp"
-                        android:minWidth="96dp">
+                        android:minWidth="96dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
 
                         <RadioButton
                             android:id="@+id/Passive"
@@ -183,10 +239,19 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -202,11 +267,9 @@
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/FuelGroup"
                         android:text="Fuel Shooter" />
 
 
@@ -214,11 +277,11 @@
                         android:id="@+id/FuelGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/FuelShooter"
                         android:minHeight="96dp"
-                        android:minWidth="96dp">
+                        android:minWidth="96dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
 
                         <RadioButton
                             android:id="@+id/HighBoiler"
@@ -248,9 +311,18 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -266,11 +338,9 @@
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="false"
                         android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/ClimberGroup"
                         android:text="Climber" />
 
 
@@ -278,11 +348,11 @@
                         android:id="@+id/ClimberGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/ClimbGroup"
                         android:minHeight="48dp"
-                        android:minWidth="48dp">
+                        android:minWidth="48dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
 
                         <RadioButton
                             android:id="@+id/yesclimb"
@@ -306,10 +376,19 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
-                app:cardBackgroundColor="@color/black"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -325,11 +404,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Comments"
-                        android:textColorHint="@color/primary"
-                        />
+                        android:textColorHint="@color/dark_background" />
 
                 </RelativeLayout>
 
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp">
             </android.support.v7.widget.CardView>
 
             <Button
@@ -337,7 +424,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.06"
-                android:background="@color/black"
+                android:background="@color/primary_dark"
                 android:onClick="SavePit"
                 android:text="Save" />
 

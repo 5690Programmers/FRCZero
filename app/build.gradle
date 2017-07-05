@@ -15,8 +15,8 @@ android {
         applicationId "com.team5690.frc.frczero"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 2
-        versionName "2.0"
+        versionCode 4
+        versionName "3.11"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

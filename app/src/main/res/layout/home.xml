@@ -19,15 +19,16 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/black"
                 app:cardCornerRadius="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/scout_title"
+                    android:background="@color/primary_dark"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -36,21 +37,60 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="Scout" />
+                        android:text="Scout"
+                        android:textColor="@color/light_background" />
 
                     <Button
                         android:id="@+id/scout_match_button"
                         android:layout_width="match_parent"
                         android:layout_height="58dp"
+                        android:background="@color/primary"
                         android:onClick="gotoScouting"
-                        android:text="@string/match_scout" />
+                        android:paddingBottom="4dp"
+                        android:text="@string/match_scout"
+                        android:textColor="@color/light_background" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible" />
 
                     <Button
                         android:id="@+id/scout_pit_button"
                         android:layout_width="match_parent"
                         android:layout_height="58dp"
+                        android:background="@color/primary"
                         android:onClick="gotoPitScouting"
-                        android:text="@string/pit_scout" />
+                        android:paddingTop="4dp"
+                        android:text="@string/pit_scout"
+                        android:textColor="@color/light_background" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/scout_title"
+                    android:background="@color/primary_dark"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="All data is saved under Android/data/com.team5690.frc.frczero/files  ***Change coming soon***"
+                        android:textColor="@color/light_background" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>

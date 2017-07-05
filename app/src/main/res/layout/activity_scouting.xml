@@ -20,60 +20,93 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
-
-
-                <EditText
-                    android:id="@+id/vMatchNumber"
-                    style="@style/TextAppearance.AppCompat.Title"
+                <RelativeLayout
+                    android:id="@+id/root3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/controls"
-                    android:textColorHint="@color/primary"
-                    android:hint="Match Number" />
+                    android:layout_height="103dp"
+                    android:orientation="vertical"
+                    android:padding="0dp">
 
+                    <EditText
+                        android:id="@+id/vMatchNumber"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:hint="Match Number"
+                        android:paddingRight="16dp"
+                        android:textColorHint="@color/dark_background" />
+
+                    <EditText
+                        android:id="@+id/vTeamNumber"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/vMatchNumber"
+                        android:hint="Team Number"
+                        android:textColorHint="@color/dark_background" />
+
+                    <LinearLayout
+                        android:id="@+id/backcontrol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/backbutton"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginRight="13dp"
+                        android:background="@mipmap/backbutton2"
+                        android:backgroundTint="@color/primary"
+                        android:onClick="BackButton"
+                        android:padding="0dp"
+                        android:text=""
+                        android:textColor="@color/light_background"
+                        android:textSize="22sp" />
+
+
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
+
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="0dp"
-                app:cardCornerRadius="0dp">
-
-
-
-            <EditText
-                android:id="@+id/vTeamNumber"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/controls"
-                android:textColorHint="@color/primary"
-                android:hint="Team Number" />
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/root3"
+                    android:id="@+id/root10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -97,11 +130,11 @@
 
                         <Button
                             android:id="@+id/mGears"
-                            android:onClick="onClick"
                             style="?android:attr/buttonStyleSmall"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="?attr/selectableItemBackground"
+                            android:onClick="onClick"
                             android:text="-"
                             android:textColor="?attr/colorAccent"
                             android:textSize="22sp" />
@@ -117,11 +150,11 @@
 
                         <Button
                             android:id="@+id/pGears"
-                            android:onClick="onClick"
                             style="?android:attr/buttonStyleSmall"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="?attr/selectableItemBackground"
+                            android:onClick="onClick"
                             android:text="+"
                             android:textColor="?attr/colorAccent"
                             android:textSize="22sp" />
@@ -133,9 +166,17 @@
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -163,11 +204,11 @@
 
                         <Button
                             android:id="@+id/mFuel"
-                            android:onClick="onClick"
                             style="?android:attr/buttonStyleSmall"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="?attr/selectableItemBackground"
+                            android:onClick="onClick"
                             android:text="-"
                             android:textColor="?attr/colorAccent"
                             android:textSize="22sp" />
@@ -183,11 +224,11 @@
 
                         <Button
                             android:id="@+id/pFuel"
-                            android:onClick="onClick"
                             style="?android:attr/buttonStyleSmall"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="?attr/selectableItemBackground"
+                            android:onClick="onClick"
                             android:text="+"
                             android:textColor="?attr/colorAccent"
                             android:textSize="22sp" />
@@ -196,16 +237,20 @@
             </android.support.v7.widget.CardView>
 
 
-
-
-
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -234,7 +279,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/Auto"
+                        android:layout_alignParentTop="true"
                         android:minHeight="48dp"
                         android:minWidth="48dp">
 
@@ -258,13 +303,20 @@
             </android.support.v7.widget.CardView>
 
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -293,7 +345,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/Climb"
+                        android:layout_alignParentTop="true"
                         android:minHeight="48dp"
                         android:minWidth="48dp">
 
@@ -325,13 +377,20 @@
             </android.support.v7.widget.CardView>
 
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
 
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                app:cardBackgroundColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/primary_dark"
                 app:cardCornerRadius="0dp">
 
 
@@ -342,27 +401,34 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                 <EditText
-                     android:id="@+id/vComments"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:hint="Comments"
-                     android:textColorHint="@color/primary"
-                     />
+                    <EditText
+                        android:id="@+id/vComments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Comments"
+                        android:textColorHint="@color/dark_background" />
 
                 </RelativeLayout>
 
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                app:cardBackgroundColor="@color/primary"
+                app:cardCornerRadius="0dp"></android.support.v7.widget.CardView>
 
             <Button
                 android:id="@+id/Save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.06"
+                android:background="@color/primary_dark"
                 android:minHeight="67dp"
-                android:background="@color/black"
-                android:onClick="Save"
+                android:onClick="SaveMatch"
                 android:text="Save" />
 
         </LinearLayout>

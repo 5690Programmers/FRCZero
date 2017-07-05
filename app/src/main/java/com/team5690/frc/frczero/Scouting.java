@@ -1,4 +1,5 @@
 package com.team5690.frc.frczero;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,14 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 
+
 public class Scouting extends AppCompatActivity {
+
+    public void BackButton(View view){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
     Button SaveMatch;
     private RadioGroup AutoYN;
     private RadioButton AutoButton;
@@ -86,11 +94,15 @@ public class Scouting extends AppCompatActivity {
             }
         });
 
-
         SaveMatch = (Button) findViewById(R.id.Save);
         SaveMatch.setOnClickListener(new OnClickListener() {
+
+
+
             @Override
             public void onClick(View v) {
+
+
 
                 AutoYN = (RadioGroup) findViewById(R.id.AutoGroup);
                 ClimbGroup = (RadioGroup) findViewById(R.id.ClimbGroup);
@@ -127,20 +139,19 @@ public class Scouting extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(Scouting.this, ("File Saved..."),
+                Toast.makeText(Scouting.this, ("Scouting Data Saved"),
                         Toast.LENGTH_LONG).show();
 
             }
+
         });
 
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             SaveMatch.setEnabled(false);
         } else {
-            myExternalFile = new File(getExternalFilesDir(filepath), filename);        }
+           myExternalFile = new File(getExternalFilesDir(filepath), filename);
+        }
     }
-
-
-
 
     private static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();

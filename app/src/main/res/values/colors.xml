@@ -3,10 +3,10 @@
 <resources>
 
     <!--Material Colors-->
-    <color name="primary">#0000FF</color> <!--3919C9-->
-    <color name="primary_dark">#0000FF</color>
-    <color name="color_accent">#FF0000</color>
+    <color name="primary">#006494</color> <!--3919C9-->
+    <color name="primary_dark">#0b2545</color>
+    <color name="color_accent">#13315c</color>
     <color name="black">#000000</color>
-    <color name="dark_background">#0000FF</color>
-    <color name="light_background">#0000FF</color>
+    <color name="dark_background">#8da9c4</color>
+    <color name="light_background">#eef4ed</color>
 </resources>

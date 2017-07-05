@@ -1,5 +1,6 @@
 package com.team5690.frc.frczero;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,12 @@ import java.io.OutputStreamWriter;
 
 public class pit_scouting extends AppCompatActivity {
 
+
+    public void BackButton(View view){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
     private  RadioGroup DriveGroup;
     private  RadioButton DriveButtons;
 
@@ -32,7 +39,7 @@ public class pit_scouting extends AppCompatActivity {
     EditText vPitTeamNumber, vPitComments;
     Button SavePit;
     private String filename = "PitScouting.csv";
-    private String filepath = "PitScouting";
+    private String filepath = "ScoutingData";
     File myFile;
 
     @Override
@@ -83,14 +90,14 @@ public class pit_scouting extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(pit_scouting.this, ("File Saved..."), Toast.LENGTH_LONG).show();
+                Toast.makeText(pit_scouting.this, ("Pit Scouting Data Saved"), Toast.LENGTH_LONG).show();
             }
         });
 
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             SavePit.setEnabled(false);
         } else {
-            myFile = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), filename);
+            myFile = new File(getExternalFilesDir(filepath), filename);
         }
 
 

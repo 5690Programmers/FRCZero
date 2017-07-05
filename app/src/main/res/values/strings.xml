@@ -22,6 +22,7 @@
     <string name="swerve">Swerve</string>
     <string name="holonomic">Holonomic</string>
     <string name="mecanum">Mecanum</string>
+    <string name="slide">Slide</string>
 
     <string name="passive">Passive</string>
     <string name="active">Active</string>

@@ -2,6 +2,8 @@
     <string name="app_name">FRC:Zero</string>
     <string name="match_scout">Match Scouting</string>
     <string name="pit_scout">Pit Scouting</string>
+    <string name="sync">Sync</string>
+
 
     <!--/* Match Scouting Strings */-->
 
@@ -9,8 +11,10 @@
     <string name="attemptclimb">Attempted Climb</string>
     <string name="noclimb">No Climb</string>
 
-    <string name="autoyes">Yes</string>
-    <string name="autono">No</string>
+    <string name="middle">Middle</string>
+    <string name="right_side">Right Side</string>
+    <string name="left_side">Left Side</string>
+    <string name="autono">None</string>
 
     <string name="offense">Defense</string>
     <string name="defense">Offense</string>

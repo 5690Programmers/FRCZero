@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -16,6 +17,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+
+import static com.team5690.frc.frczero.R.id.autoComments;
+import static com.team5690.frc.frczero.R.id.gearComments;
 
 
 public class Scouting extends AppCompatActivity {
@@ -41,7 +45,7 @@ public class Scouting extends AppCompatActivity {
 
     Button pGears, mGears, pFuel, mFuel;
     TextView tGears, vGears, vFuel, tFuel;
-    EditText vTeamNumber, vMatchNumber, vComments;
+    EditText vTeamNumber, vMatchNumber, vComments, autoComments, gearComments, fuelComments;
     int GearCounter;
     int FuelCounter;
 
@@ -50,9 +54,16 @@ public class Scouting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouting);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         /*Here we tell the app that hey this is what this is and start the counters at 0 pls*/
         GearCounter = 0;
         vComments = (EditText) findViewById(R.id.vComments);
+        autoComments = (EditText) findViewById(R.id.autoComments);
+        gearComments = (EditText) findViewById(R.id.gearComments);
+        fuelComments = (EditText) findViewById(R.id.fuelComments);
+
+
         vTeamNumber = (EditText) findViewById(R.id.vTeamNumber);
         vMatchNumber = (EditText) findViewById(R.id.vMatchNumber);
         pGears = (Button) findViewById(R.id.pGears);
@@ -142,9 +153,12 @@ public class Scouting extends AppCompatActivity {
                     * Adding a , after it puts each entry into its own cell in a spreadsheet(Also know as CSV or comma separated values*/
                     fos.write((vMatchNumber.getText().toString() + ",").getBytes());
                     fos.write((vTeamNumber.getText().toString() + ",").getBytes());
-                    fos.write((vGears.getText().toString() + ",").getBytes());
-                    fos.write((vFuel.getText().toString() + ",").getBytes());
                     fos.write((AutoButton.getText().toString() + ",").getBytes());
+                    fos.write((autoComments.getText().toString() + ",").getBytes());
+                    fos.write((vGears.getText().toString() + ",").getBytes());
+                    fos.write((gearComments.getText().toString() + ",").getBytes());
+                    fos.write((vFuel.getText().toString() + ",").getBytes());
+                    fos.write((fuelComments.getText().toString() + ",").getBytes());
                     fos.write((ClimbButton.getText().toString() + ",").getBytes());
                     fos.write(vComments.getText().toString().getBytes());
                     /*All done pls close this I has nothing left for you to write*/

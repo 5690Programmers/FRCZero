@@ -1,19 +1,25 @@
 package com.team5690.frc.frczero;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+
+
 
 
 public class pit_scouting extends AppCompatActivity {
@@ -38,6 +44,7 @@ public class pit_scouting extends AppCompatActivity {
     private RadioGroup ClimberGroup;
     private RadioButton ClimberButtons;
 
+
     EditText vPitTeamNumber, vPitComments;
     Button SavePit;
     private String filename = "PitScouting.csv";
@@ -45,11 +52,20 @@ public class pit_scouting extends AppCompatActivity {
     File myFile;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pit_scouting);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+
+//        Intent intent = getIntent();
+//        String message = intent.getStringExtra(Home.EXTRA_MESSAGE);
+//
+//        // Capture the layout's TextView and set the string as its text
+//        TextView textView = (TextView) findViewById(ScouterNumber);
+//        textView.setText(message);
 
 
         /* we are defining what some of these things mean, like vPitComments being and EditText field with the id of vPitComments*/

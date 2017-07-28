@@ -24,6 +24,16 @@
                 app:cardBackgroundColor="@color/black"
                 app:cardCornerRadius="0dp">
 
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -32,13 +42,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        style="@style/TextAppearance.AppCompat.Title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:text="Scout"
-                        android:textColor="@color/light_background" />
 
                     <Button
                         android:id="@+id/scout_match_button"
@@ -50,10 +53,24 @@
                         android:text="@string/match_scout"
                         android:textColor="@color/light_background" />
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="invisible" />
+                        android:layout_marginBottom="0dp"
+                        app:cardBackgroundColor="@color/black"
+                        app:cardCornerRadius="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/scout_title"
+                            android:background="@color/primary_dark"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
 
                     <Button
                         android:id="@+id/scout_pit_button"
@@ -95,7 +112,46 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="0dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/scout_title"
+                    android:background="@color/primary_dark"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/SaveScouter"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_weight="0.24"
+                        android:background="@color/primary"
+                        android:onClick="Save"
+                        android:paddingTop="4dp"
+                        android:text="Save Scouter Number"
+                        android:textColor="@color/light_background" />
+
+
+                    <EditText
+                        android:id="@+id/Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:onClick="SaveScouter"
+                        android:text="1-6"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_background" />
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
 
         </LinearLayout>

@@ -35,11 +35,11 @@ public class pit_scouting extends AppCompatActivity {
     private  RadioGroup DriveGroup;
     private  RadioButton DriveButtons;
 
-    private RadioGroup GearGroup;
-    private RadioButton GearButtons;
+    private RadioGroup CubeGroup;
+    private RadioButton CubeButtons;
 
-    private RadioGroup FuelGroup;
-    private RadioButton FuelButtons;
+    private RadioGroup ManipulatorGroup;
+    private RadioButton ManipulatorButtons;
 
     private RadioGroup ClimberGroup;
     private RadioButton ClimberButtons;
@@ -86,24 +86,24 @@ public class pit_scouting extends AppCompatActivity {
 
                 /*First we state private variable we initialized at the top, what it is and its ID*/
                 DriveGroup = (RadioGroup) findViewById(R.id.DriveGroup);
-                GearGroup = (RadioGroup) findViewById(R.id.GearGroup);
-                FuelGroup = (RadioGroup) findViewById(R.id.FuelGroup);
+                CubeGroup = (RadioGroup) findViewById(R.id.CubeGroup);
+                ManipulatorGroup = (RadioGroup) findViewById(R.id.ManipulatorGroup);
                 ClimberGroup = (RadioGroup) findViewById(R.id.ClimberGroup);
 
                 /*Then we int a thing to call it, like selectedId(it can be whatever you wanna call it just make it the same throughout for simplicity
                 * We set the certain selectedId to the name of a RadioGroup stated above and we ask for the CheckedRadioButton*/
 
                 int selectedId = DriveGroup.getCheckedRadioButtonId();
-                int selectedId2 = GearGroup.getCheckedRadioButtonId();
-                int selectedId3 = FuelGroup.getCheckedRadioButtonId();
+                int selectedId2 = CubeGroup.getCheckedRadioButtonId();
+                int selectedId3 = ManipulatorGroup.getCheckedRadioButtonId();
                 int selectedId4 = ClimberGroup.getCheckedRadioButtonId();
 
                 /*Once we know what button is check we wanna capture it and set it equal to something
                 * We take the private variables we initialized at the top, tell it that its a RadioButton, then tell it that it
                 * has the selectedId of what was selected before*/
                 DriveButtons = (RadioButton) findViewById(selectedId);
-                GearButtons = (RadioButton) findViewById(selectedId2);
-                FuelButtons = (RadioButton) findViewById(selectedId3);
+                CubeButtons = (RadioButton) findViewById(selectedId2);
+                ManipulatorButtons = (RadioButton) findViewById(selectedId3);
                 ClimberButtons = (RadioButton) findViewById(selectedId4);
 
                 /*This includes all the saving of the inputs*/
@@ -118,8 +118,8 @@ public class pit_scouting extends AppCompatActivity {
                     * Adding a , after it puts each entry into its own cell in a spreadsheet(Also know as CSV or comma separated values*/
                     fos.write((vPitTeamNumber.getText().toString() + ",").getBytes());
                     fos.write((DriveButtons.getText().toString() + ",").getBytes());
-                    fos.write((GearButtons.getText().toString() + ",").getBytes());
-                    fos.write((FuelButtons.getText().toString() + ",").getBytes());
+                    fos.write((CubeButtons.getText().toString() + ",").getBytes());
+                    fos.write((ManipulatorButtons.getText().toString() + ",").getBytes());
                     fos.write((ClimberButtons.getText().toString() + ",").getBytes());
                     fos.write(vPitComments.getText().toString().getBytes());
                     /*We tell the app, all done close up shop pls*/

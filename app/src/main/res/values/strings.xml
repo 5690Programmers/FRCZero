@@ -15,12 +15,15 @@
     <string name="right_side">Right Side</string>
     <string name="left_side">Left Side</string>
     <string name="autono">None</string>
+    <array name="MultipleAuto">Multiple Autos</array>
 
     <string name="offense">Defense</string>
     <string name="defense">Offense</string>
     <string name="playboth">Both</string>
 
     <!--/* Pit Scouting Strings */-->
+
+    <string name="NOCubeManipulator">No Manipulator</string>
 
     <string name="tank">Tank</string>
     <string name="swerve">Swerve</string>
@@ -30,11 +33,12 @@
 
     <string name="passive">Passive</string>
     <string name="active">Active</string>
-    <string name="nogearplace">No Intake</string>
+    <string name="nocubeplace">No Intake</string>
 
-    <string name="highshooter">High Shooter</string>
-    <string name="lowshooter">Low Shooter</string>
-    <string name="noshooter">No Shooter</string>
+    <string name="Elevator">Elevator</string>
+    <string name="Shooter">Shooter</string>
+    <string name="Arm">Arm</string>
+
     <string name="title_activity_testingactivity">Testingactivity</string>
     <string name="title_activity_settings">Settings</string>
 

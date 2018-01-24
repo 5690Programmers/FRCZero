@@ -190,18 +190,18 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/GearPlacement"
+                        android:id="@+id/CubeIntake"
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Gear Placement" />
+                        android:text="Cube Intake System" />
 
 
                     <RadioGroup
-                        android:id="@+id/GearGroup"
+                        android:id="@+id/CubeGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:minHeight="96dp"
@@ -225,11 +225,11 @@
                             android:text="@string/active" />
 
                         <RadioButton
-                            android:id="@+id/NoGearPlace"
+                            android:id="@+id/NoCubeIntake"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="false"
-                            android:text="@string/nogearplace" />
+                            android:text="@string/nocubeplace" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -263,18 +263,18 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/FuelShooter"
+                        android:id="@+id/CubeName"
                         style="@style/TextAppearance.AppCompat.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:text="Fuel Shooter" />
+                        android:text="Cube Delivery System" />
 
 
                     <RadioGroup
-                        android:id="@+id/FuelGroup"
+                        android:id="@+id/ManipulatorGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:minHeight="96dp"
@@ -284,25 +284,32 @@
                         android:layout_alignParentEnd="true">
 
                         <RadioButton
-                            android:id="@+id/HighBoiler"
+                            android:id="@+id/ElevatorCube"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
-                            android:text="@string/highshooter" />
+                            android:text="@string/Elevator" />
 
                         <RadioButton
-                            android:id="@+id/LowBoiler"
+                            android:id="@+id/ShooterCube"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="false"
-                            android:text="@string/lowshooter" />
+                            android:text="@string/Shooter" />
 
                         <RadioButton
-                            android:id="@+id/NoShooter"
+                            android:id="@+id/ArmCube"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="false"
-                            android:text="@string/noshooter" />
+                            android:text="@string/Arm" />
+
+                        <RadioButton
+                            android:id="@+id/NOCubeManipulator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/NOCubeManipulator" />
                     </RadioGroup>
 
                 </RelativeLayout>

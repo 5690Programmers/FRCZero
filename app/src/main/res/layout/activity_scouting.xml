@@ -255,7 +255,7 @@ This LinearLayout makes the nice LinearLayout you see, not much to it
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/controls"
-                        android:text="Gears" />
+                        android:text="Power Cubes Placed" />
 
                     <LinearLayout
                         android:id="@+id/controls"
